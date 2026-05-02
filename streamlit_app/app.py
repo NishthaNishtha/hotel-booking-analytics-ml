@@ -2,7 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("streamlit_app/random_forest_model.pkl")
+import os
+model_path = os.path.join(os.path.dirname(__file__), "random_forest_model.pkl")
+model = joblib.load(model_path)
 
 st.title("Hotel Booking Cancellation Prediction System")
 
